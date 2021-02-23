@@ -1,5 +1,13 @@
 # Псевдонимы для GIT
 alias gg='git status; git add --a; git commit -m "update"; git status; git push;' # Добавить новый коммит
+alias ggbash='cd ~/; cp .bashrc ./bashrc/.bashrc; cd ~/bashrc/; gg;' # Обновить .bashrc
+
+# Установка программ
+alias newPC='apt install git nano htop wget net-tools;'
+
+# Удобные инструменты
+alias myip='wget eho0.me -qO -'
+
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
