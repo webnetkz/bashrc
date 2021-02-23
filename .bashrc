@@ -1,3 +1,6 @@
+# Псевдонимы для GIT
+alias gg='git status; git add --a; git commit -m "update"; git status; git push;' # Добавить новый коммит
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
