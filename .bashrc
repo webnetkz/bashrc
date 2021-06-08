@@ -1,7 +1,9 @@
 # Псевдонимы для GIT
-alias gg='git status; git add --a; git commit -m "update"; git status; git push;' # Добавить новый коммит
-alias ggbash='cd ~/; cp .bashrc ./bashrc/.bashrc; cd ~/bashrc/; gg;' # Обновить .bashrc
-
+COMMIT="update" # Название коммита по умолчанию
+REP="rep"
+alias gg='git status; git add --a; git commit -m $COMMIT; git status; git push;' # Добавить новый коммит
+alias upbash='cd ~/; cp .bashrc ./bashrc/.bashrc; cd ~/bashrc/; gg;' # Обновить .bashrc
+alias gcl='git clone https://github.com/webnetkz/$REP.git'
 # Установка программ
 alias newPC='apt install git nano htop wget net-tools;'
 
