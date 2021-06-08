@@ -8,7 +8,7 @@ alias gcl='git clone https://github.com/webnetkz/$REP.git'
 alias newPC='apt install git nano htop wget net-tools;'
 
 # Удобные инструменты
-alias myip='wget eho0.me -qO -'
+alias myip='wget eho0.me -qO -' # Получение текущего IP адреса
 
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
