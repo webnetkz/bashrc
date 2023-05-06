@@ -1,16 +1,3 @@
-# Псевдонимы для GIT
-COMMIT="update" # Название коммита по умолчанию
-REP="rep"
-alias gg='git status; git add --a; git commit -m $COMMIT; git status; git push;' # Добавить новый коммит
-alias upbash='cd ~/; cp .bashrc ./bashrc/.bashrc; cd ~/bashrc/; gg;' # Обновить .bashrc
-alias gcl='git clone https://github.com/webnetkz/$REP.git'
-# Установка программ
-alias newPC='apt install git nano htop wget net-tools;'
-
-# Удобные инструменты
-alias myip='wget eho0.me -qO -' # Получение текущего IP адреса
-
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -20,6 +7,19 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
+alias chrome="google-chrome"
+alias off="shutdown -P 0"
+alias sleep='systemctl suspend'
+
+function git_push() {
+  local str="$1"
+  git add .;
+  git commit -m "$str";
+  git push;
+  git status;
+}
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -35,6 +35,7 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -60,12 +61,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -105,6 +106,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -128,3 +130,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
