@@ -6,5 +6,8 @@ alias off="shutdown -P 0"
 alias gits="git status"
 alias lock="gnome-screensaver-command -l"
 
+
+alias bb="bitrix build"
+
 . ~/.gitcommands
 
