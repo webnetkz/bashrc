@@ -1,0 +1,15 @@
+alias ggs="git status"
+alias ggc="git checkout"
+alias ggf="git fetch"
+alias ggb="git branch"
+alias ggm="git merge"
+alias ggl="git log"
+
+function ggp() 
+{
+  local str="$1"
+  git add .;
+  git commit -m "$str";
+  git push;
+  git status;
+}
