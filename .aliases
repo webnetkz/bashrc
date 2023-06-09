@@ -1,0 +1,7 @@
+alias chrome="google-chrome"
+# System
+alias sleep='systemctl suspend'
+alias off="shutdown -P 0"
+alias lock="gnome-screensaver-command -l"
+# Bitrix
+alias bb="bitrix build"
