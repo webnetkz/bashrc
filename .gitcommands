@@ -1,15 +1,17 @@
+alias gg="git"
 alias ggs="git status"
 alias ggc="git checkout"
 alias ggf="git fetch"
 alias ggb="git branch"
 alias ggm="git merge"
 alias ggl="git log"
+alias ggr="git rebase"
 
-function ggp() 
+function ggp($commint) 
 {
   local str="$1"
   git add .;
-  git commit -m "$str";
+  git commit -m "$commint";
   git push;
   git status;
 }
