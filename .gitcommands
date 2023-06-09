@@ -7,11 +7,12 @@ alias ggm="git merge"
 alias ggl="git log"
 alias ggr="git rebase"
 
-function ggp($commint) 
+function ggp() 
 {
   local str="$1"
+  git status;
   git add .;
-  git commit -m "$commint";
+  git commit -m "$str";
   git push;
   git status;
 }
