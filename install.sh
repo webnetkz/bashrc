@@ -2,6 +2,7 @@
 
 cp -u .init ~/.init;
 cp -u .gitcommands ~/.gitcommands
+cp -u .aliases ~/.aliases
 
 line_to_add=". ~/.init"      
 if [ -f ~/.bashrc ]; then
@@ -14,3 +15,5 @@ if [ -f ~/.bashrc ]; then
 else
     echo "Файл ~/.bashrc не существует."
 fi
+
+source ~/.bashrc
