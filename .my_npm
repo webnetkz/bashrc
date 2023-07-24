@@ -2,4 +2,10 @@ function npmgo()
 {
   npx webpack;
   nmp publish;
+  local str="$1"
+  git status;
+  git add .;
+  git commit -m "$str";
+  git push;
+  git status;
 }
