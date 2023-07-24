@@ -1,7 +1,5 @@
 function npmgo() 
 {
-  local str="$1"
   npx webpack;
-  ggp();
   nmp publish;
 }

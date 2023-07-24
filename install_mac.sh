@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cp --update .my_init ~/.my_init;
-cp --update .my_git ~/.my_git;
-cp --update .my_npm ~/.my_npm;
-cp --update .my_aliases ~/.my_aliases;
+rsync -u .my_init ~/.my_init;
+rsync -u .my_aliases ~/.my_aliases;
+rsync -u .my_git ~/.my_git;
+rsync -u .my_npm ~/.my_npm;
 
 line_to_add=". ~/.my_init"      
 if [ -f ~/.bash_profile ]; then
@@ -18,3 +18,7 @@ else
 fi
 
 source ~/.bash_profile
+source ~/.my_init
+source ~/.my_aliases
+source ~/.my_git
+source ~/.my_npm
