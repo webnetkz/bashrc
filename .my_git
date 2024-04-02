@@ -6,6 +6,7 @@ alias ggb="git branch"
 alias ggm="git merge"
 alias ggl="git log"
 alias ggr="git rebase"
+alias ggg="git log --oneline --decorate --all --graph"
 
 function ggp() 
 {
