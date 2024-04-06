@@ -1,14 +1,17 @@
-alias gg="git"
-alias ggs="git status"
-alias ggc="git checkout"
-alias ggf="git fetch"
-alias ggb="git branch"
-alias ggm="git merge"
-alias ggl="git log"
-alias ggr="git rebase"
-alias ggg="git log --oneline --decorate --all --graph"
+alias g="git"
+alias gst="git stash"
+alias gpull="git pull"
+alias gpush="git push"
+alias gs="git status"
+alias gc="git checkout"
+alias gf="git fetch --all --prune"
+alias gb="git branch"
+alias gm="git merge"
+alias gl="git log"
+alias gr="git rebase"
+alias gg="git log --oneline --decorate --all --graph"
 
-function ggp() 
+function gp() 
 {
   local str="$1"
   git status;
