@@ -1,3 +1,7 @@
+alias n="npm"
+alias nserve="npm run serve"
+alias nbuild="npm run build"
+
 function npmgo() 
 {
   npx webpack;
