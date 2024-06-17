@@ -1,0 +1,42 @@
+# .my_docker
+
+# Docker
+alias d="docker"
+alias drun="docker run"
+alias dbuild="docker build"
+alias dpull="docker pull"
+alias dstart="docker start"
+alias drestart="docker restart"
+alias dpause="docker pause"
+alias dunpause="docker unpause"
+alias dps="docker ps -a"
+alias dinfo="docker info"
+alias dimg="docker images"
+alias dlogin="docker login"
+alias dlogout="docker logout"
+
+doki() {
+    # Получаем список всех контейнеров
+    containers=$(docker ps -aq)
+
+    # Проверяем, есть ли контейнеры
+    if [ -z "$containers" ]; then
+        echo "Нет активных контейнеров."
+        return 0
+    fi
+
+    echo "###########################################"
+
+    # Проходимся по каждому контейнеру и выводим информацию
+    for container in $containers
+    do
+        echo "Контейнер ID: $container"
+        docker inspect --format='{{.Name}}' $container | sed 's/^\/\(.*\)$/Имя: \1/'
+        docker inspect --format='{{.State.Status}}' $container | sed 's/^\(.*\)$/Статус: \1/'
+        docker inspect --format='{{.Config.Image}}' $container | sed 's/^\(.*\)$/Образ: \1/'
+        docker inspect --format='{{.NetworkSettings.IPAddress}}' $container | sed 's/^\(.*\)$/IP-адрес: \1/'
+        echo "--------------------------------"
+    done
+
+    echo "###########################################"
+}

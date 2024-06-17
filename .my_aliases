@@ -9,7 +9,3 @@ alias gdrive="google-drive-ocamlfuse ~/gdrive"
 # Bitrix
 alias bb="bitrix build"
 alias bbw="bitrix build -w"
-
-# Docker
-alias d="docker"
-alias dr="docker run"
