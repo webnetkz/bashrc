@@ -2,6 +2,18 @@
 <hr>
 <b>.bash_profile</b> - MacOS
 <hr>
-<b>.bashrc</> - Unix
+<b>.bashrc</> - Linux
 <hr>
-Require: <br><code>. ~/.init</code>
+<h2>Install</h2>
+<p>Clone repositories</p>
+```shell
+cd ~/ ; git clone https://github.com/webnetkz/bashrc.git; cd bashrc
+```
+<p>Linux</p>
+```shell
+./install.sh
+```
+<p>Mac</p>
+```shell
+./install_mac.sh
+```
