@@ -1,19 +1,18 @@
-<h1>Helper for unix systems</h1>
-<hr>
-<b>.bash_profile</b> - MacOS
-<hr>
-<b>.bashrc</> - Linux
-<hr>
-<h2>Install</h2>
-<p>Clone repositories</p>
+# Helper for unix systems
+---
+- .bash_profile - MacOS
+- .bashrc - Linux
+---
+## Install
+Clone repositories
 ```shell
 cd ~/ ; git clone https://github.com/webnetkz/bashrc.git; cd bashrc
 ```
-<p>Linux</p>
+Linux
 ```shell
 ./install.sh
 ```
-<p>Mac</p>
+Mac
 ```shell
 ./install_mac.sh
 ```
