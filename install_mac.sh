@@ -11,6 +11,6 @@ for file in .[^.]*; do
     fi
 done
 
-source ~/.bashrc_profile
+cd ~/ source .bashrc_profile
 echo "Success"
 
