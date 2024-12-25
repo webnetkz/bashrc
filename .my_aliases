@@ -1,11 +1,9 @@
 alias ll="ls -la"
-alias chrome="google-chrome"
 
 # System
 alias sleep='systemctl suspend'
 alias off="shutdown -P 0"
 alias lock="gnome-screensaver-command -l"
-alias gdrive="google-drive-ocamlfuse ~/gdrive"
 
 # Bitrix
 alias bb="bitrix build"

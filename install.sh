@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rsync -u .[^.]* ~/
+rsync -u ./.[^.]* ~/
 
 for file in .[^.]*; do
     if [ -f "$file" ]; then
