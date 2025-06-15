@@ -21,8 +21,13 @@ fi
 
 # Генерируем приватный ключ
 PRIVATE_KEY=$(wg genkey)
+# Сохраняем приватный ключ в файл с ограниченными правами
+echo "$PRIVATE_KEY" > "/etc/wireguard/peers/keys/private_$USERNAME"
+chmod 600 "/etc/wireguard/peers/keys/private_$USERNAME"
+
 # Генерируем публичный ключ
 PUBLIC_KEY=$(echo "$PRIVATE_KEY" | wg pubkey)
+
 
 # Ищем последний использованный IP
 LAST_IP=$(grep AllowedIPs $PEERS_DIR/*.conf | awk -F '[./]' '{print $(NF-1)}' | sort -n | tail -1)
