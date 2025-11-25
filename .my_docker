@@ -17,6 +17,9 @@ alias dlogout="docker logout"
 alias dncreate="docker network create"
 alias dninspect="docker network inspect"
 alias dnconnect="docker network connect"
+alias drmi="docker rmi"
+alias drmia="docker rmi -a"
+alias drm="docker rm"
 
 doki() {
     # Получаем список всех контейнеров
