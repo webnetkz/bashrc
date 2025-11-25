@@ -14,6 +14,9 @@ alias dinfo="docker info"
 alias dimg="docker images"
 alias dlogin="docker login"
 alias dlogout="docker logout"
+alias dncreate="docker network create"
+alias dninspect="docker network inspect"
+alias dnconnect="docker network connect"
 
 doki() {
     # Получаем список всех контейнеров
