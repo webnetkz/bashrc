@@ -2,6 +2,9 @@
 
 # Docker
 alias d="docker"
+alias dcompose="docker-compose"
+alias pcompose="podman-compose"
+alias p="podman"
 alias drun="docker run"
 alias dbuild="docker build"
 alias dpull="docker pull"
