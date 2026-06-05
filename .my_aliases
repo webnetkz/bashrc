@@ -8,3 +8,51 @@ alias lock="gnome-screensaver-command -l"
 # Bitrix
 alias bb="bitrix build"
 alias bbw="bitrix build -w"
+
+
+cleanmac() {
+    echo "=== Начинаю глубокую очистку macOS ==="
+
+    # 1. Сбор базовой статистики до очистки
+    local before=$(df -g / | awk 'NR==2 {print $4}')
+
+    echo "--> Очистка кэшей пользователя (~/Library/Caches)..."
+    # Удаляем кэши приложений, исключая критичные структуры
+    find ~/Library/Caches -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null
+
+    echo "--> Очистка логов разработчика и отчетов об ошибках..."
+    rm -rf ~/Library/Logs/*
+    rm -rf ~/Library/Developer/Xcode/DerivedData/* 2>/dev/null
+
+    echo "--> Очистка кэша пакетных менеджеров (npm, pip)..."
+    rm -rf ~/.npm/_cacache/* 2>/dev/null
+    rm -rf ~/.cache/pip/* 2>/dev/null
+
+    echo "--> Очистка системных логов и кэша (требуется sudo)..."
+    sudo rm -rf /private/var/log/*
+    sudo rm -rf /Library/Caches/*
+
+    echo "--> Очистка кэша обновлений macOS..."
+    sudo rm -rf /Library/Updates/*
+
+    echo "--> Сброс DNS и оптимизация RAM..."
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
+    sudo purge
+
+    echo "--> Очистка Корзины..."
+    rm -rf ~/.Trash/*
+
+    if command -v brew &> /dev/null; then
+        echo "--> Очистка Homebrew..."
+        brew cleanup -s
+        rm -rf $(brew --cache)
+    fi
+
+    # 2. Итог работы
+    local after=$(df -g / | awk 'NR==2 {print $4}')
+    local diff=$((after - before))
+    
+    echo "=== Очистка завершена! ==="
+    echo "Освобождено примерно: $diff ГБ"
+}
